@@ -6,6 +6,8 @@
 package com.swt301.quadraticequation.core;
 
 import static org.testng.Assert.*;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 /**
@@ -13,10 +15,19 @@ import org.testng.annotations.Test;
  * @author Admin
  */
 public class QuadraticEquationNGTest {
+    
+    QuadraticEquation instance;
 
-    public QuadraticEquationNGTest() {
+    @BeforeTest
+    public void init(){
+        instance = new QuadraticEquation();
     }
 
+    @AfterTest
+    public void cleanUp(){
+        instance = null;
+    }
+    
     /**
      * Test of findRoot method, of class QuadraticEquation.
      */
@@ -26,7 +37,6 @@ public class QuadraticEquationNGTest {
         double a = 1;
         double b = -2;
         double c = 1;
-        QuadraticEquation instance = new QuadraticEquation();
         double[] expResult = {1};
         double[] result = instance.findRoot(a, b, c);
         assertEquals(result, expResult);
@@ -38,7 +48,6 @@ public class QuadraticEquationNGTest {
         double a = 1;
         double b = -3;
         double c = 2;
-        QuadraticEquation instance = new QuadraticEquation();
         double[] expResult = {2, 1};
         double[] result = instance.findRoot(a, b, c);
         assertEquals(result, expResult);
@@ -50,7 +59,6 @@ public class QuadraticEquationNGTest {
         double a = 1;
         double b = -2;
         double c = 2;
-        QuadraticEquation instance = new QuadraticEquation();
         double[] result = instance.findRoot(a, b, c);
         assertNull(result);
     }
@@ -61,7 +69,7 @@ public class QuadraticEquationNGTest {
         double a = 0;
         double b = -1;
         double c = 1;
-        QuadraticEquation instance = new QuadraticEquation();
         double[] result = instance.findRoot(a, b, c);
     }
+    
 }
