@@ -27,7 +27,7 @@ public class QuadraticEquation {
         double delta = b * b - 4 * a * c;
 
         if (delta < 0) {
-            return new double[0];
+            return null;
         } else if (delta == 0) {
             return new double[]{round(-b / 2 * a)};
         } else {

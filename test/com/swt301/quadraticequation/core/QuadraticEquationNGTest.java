@@ -51,9 +51,8 @@ public class QuadraticEquationNGTest {
         double b = -2;
         double c = 2;
         QuadraticEquation instance = new QuadraticEquation();
-        double[] expResult = {};
         double[] result = instance.findRoot(a, b, c);
-        assertEquals(result, expResult);
+        assertNull(result);
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
@@ -63,7 +62,6 @@ public class QuadraticEquationNGTest {
         double b = -1;
         double c = 1;
         QuadraticEquation instance = new QuadraticEquation();
-        double[] expResult = {1};
         double[] result = instance.findRoot(a, b, c);
     }
 }
